@@ -317,7 +317,7 @@ const SoftwareSection = () => {
           </h2>
           <div style={{ width:'4rem', height:'1px', background:'rgba(53,132,228,0.3)', margin:'0 auto 1.25rem' }}/>
           <p style={{ fontSize:'0.8rem', color:'#64748b', maxWidth:'560px', margin:'0 auto', lineHeight:1.8, fontWeight:300 }}>
-            Sistema modular, adaptable y 100% automatizado.
+            Sistema modular, adaptable y 100% automatizado. Diseñado para municipios e instituciones que buscan eficiencia real en la gestión tributaria.
           </p>
         </div>
 

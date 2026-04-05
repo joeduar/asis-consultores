@@ -154,8 +154,8 @@ const HeroSection = () => {
               transform: visible ? 'translateY(0)' : 'translateY(16px)',
               transition: 'all 0.7s ease-out 2.8s',
             }}>
-              Software de recaudación modular y adaptable, pasarela de pago integrada,
-              automatización de procesos y consultoría estratégica — todo en un solo contrato.
+              Ofrecemos e implementamos un software de recaudación modular y adaptable, pasarela de pago integrada,
+              automatización de procesos y consultoría estratégica — todo en un solo servicio.
             </p>
 
             {/* Buttons */}
