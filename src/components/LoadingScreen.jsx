@@ -269,7 +269,7 @@ const LoadingScreen = ({ onComplete }) => {
           letterSpacing: '0.16em', textTransform: 'uppercase',
           fontFamily: "'Outfit',sans-serif", lineHeight: 1.5,
         }}>
-          Recaudación que
+          Transformamos 
         </div>
         <div style={{
           fontSize: 'clamp(0.95rem,2.5vw,1.2rem)',
@@ -277,7 +277,7 @@ const LoadingScreen = ({ onComplete }) => {
           letterSpacing: '0.16em', textTransform: 'uppercase',
           fontFamily: "'Outfit',sans-serif",
         }}>
-          transforma instituciones
+          Instituciones
         </div>
         <div style={{
           width: 140, height: 1,
