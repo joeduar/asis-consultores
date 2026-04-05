@@ -1,0 +1,262 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark-900: #020617; /* Axioma style deep dark */
+  --color-dark-800: #0f172a;
+  --color-dark-700: #1e293b;
+  --color-dark-600: #334155;
+  --color-electric: #3584E4; /* Asis brand accent */
+  --color-electric-dark: #1A5FB4;
+  --color-electric-light: #62a0ea;
+  --color-cyan: #00d4ff;
+  --font-sans: 'Outfit', system-ui, -apple-system, sans-serif;
+}
+
+/* Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-dark-900);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-dark-900);
+  color: #E5E5E8;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== CUSTOM SCROLLBAR (Axioma style) ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-dark-900);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-dark-700);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-electric);
+}
+
+/* ===== GLASSMORPHISM / CARDS ===== */
+.bento-card {
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid rgba(53, 132, 228, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bento-card:hover {
+  border-color: rgba(53, 132, 228, 0.4);
+  box-shadow: 0 16px 48px rgba(53, 132, 228, 0.05);
+}
+
+.bento-icon-wrapper {
+  background: rgba(2, 6, 23, 0.5);
+}
+
+/* ===== TEXT STYLES ===== */
+.gradient-text {
+  background: linear-gradient(135deg, #3584E4 0%, #00d4ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.axioma-subtitle {
+  color: var(--color-electric);
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-size: 0.625rem; /* 10px */
+}
+
+.axioma-title {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 300;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+}
+
+@media (min-width: 768px) {
+  .axioma-title {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+}
+
+/* Decorative Separator */
+.divider-line {
+  width: 5rem;
+  height: 1px;
+  background-color: rgba(53, 132, 228, 0.3);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===== 3D GLOBE ===== */
+.globe-container {
+  perspective: 1200px;
+  perspective-origin: center center;
+}
+
+.globe {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  transform-style: preserve-3d;
+  animation: globeRotate 30s linear infinite;
+}
+
+@keyframes globeRotate {
+  from { transform: rotateY(0deg) rotateX(-8deg); }
+  to { transform: rotateY(360deg) rotateX(-8deg); }
+}
+
+.globe-sphere {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 35% 35%,
+    rgba(53, 132, 228, 0.15) 0%,
+    rgba(26, 95, 180, 0.1) 30%,
+    rgba(2, 6, 23, 0.05) 100%
+  );
+  box-shadow:
+    inset -30px -30px 60px rgba(0, 0, 0, 0.4),
+    inset 20px 20px 40px rgba(53, 132, 228, 0.05),
+    0 0 60px rgba(53, 132, 228, 0.05),
+    0 0 120px rgba(53, 132, 228, 0.02);
+  border: 1px solid rgba(53, 132, 228, 0.1);
+}
+
+.globe-ring, .globe-parallel {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(53, 132, 228, 0.08);
+  transform-style: preserve-3d;
+}
+
+.globe-ring { inset: 0; }
+.globe-parallel {
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%) rotateX(90deg);
+}
+
+.globe-dot {
+  position: absolute;
+  width: 3px; height: 3px;
+  background: rgba(53, 132, 228, 0.5);
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(53, 132, 228, 0.3);
+  animation: dotPulse 3s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.5); }
+}
+
+/* ===== ANIMATIONS ===== */
+.typing-cursor::after {
+  content: '|';
+  animation: cursorBlink 1s step-end infinite;
+  color: var(--color-electric);
+  font-weight: 300;
+  margin-left: 2px;
+}
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Glow underline on hover */
+.glow-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.glow-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-electric);
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.glow-underline:hover::after {
+  width: 100%;
+}
+
+/* ===== SMOOTH SECTION SPACING (AXIOMA) ===== */
+.section-gap {
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+}
+
+/* ===== BUTTON EFFECT ===== */
+.axioma-btn {
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: var(--color-electric);
+  color: var(--color-dark-900);
+  font-weight: 500;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.6875rem; /* 11px */
+}
+
+.axioma-btn:hover {
+  background-color: var(--color-electric-light);
+}
+
+.axioma-btn-outline {
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  font-weight: 500;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.6875rem; /* 11px */
+  text-align: center;
+}
+
+.axioma-btn-outline:hover {
+  background-color: white;
+  color: var(--color-dark-900);
+}

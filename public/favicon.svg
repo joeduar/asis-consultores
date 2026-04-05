@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <radialGradient id="bg" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#1e3a6e" stop-opacity="1"/>
+      <stop offset="60%" stop-color="#0d2050" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#020a1e" stop-opacity="1"/>
+    </radialGradient>
+    <radialGradient id="spec" cx="30%" cy="25%" r="45%">
+      <stop offset="0%" stop-color="white" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="arc" x1="0%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#7ec8ff"/>
+      <stop offset="100%" stop-color="#1a4d9a"/>
+    </linearGradient>
+    <clipPath id="clip">
+      <circle cx="32" cy="32" r="29"/>
+    </clipPath>
+  </defs>
+
+  <!-- Sphere -->
+  <circle cx="32" cy="32" r="29" fill="url(#bg)"/>
+
+  <!-- Grid lines clipped -->
+  <g clip-path="url(#clip)" stroke="#3584E4" fill="none" stroke-opacity="0.20">
+    <ellipse cx="32" cy="32" rx="9" ry="29" stroke-width="0.8"/>
+    <ellipse cx="32" cy="32" rx="20" ry="29" stroke-width="0.6"/>
+    <line x1="3" y1="22" x2="61" y2="22" stroke-width="0.7"/>
+    <line x1="3" y1="32" x2="61" y2="32" stroke-width="0.8"/>
+    <line x1="3" y1="42" x2="61" y2="42" stroke-width="0.7"/>
+  </g>
+
+  <!-- Network cables clipped -->
+  <g clip-path="url(#clip)" stroke="#3584E4" stroke-opacity="0.65" stroke-linecap="round" fill="none">
+    <line x1="32" y1="26" x2="19" y2="20" stroke-width="0.9"/>
+    <line x1="32" y1="26" x2="43" y2="20" stroke-width="0.9"/>
+    <line x1="32" y1="26" x2="38" y2="36" stroke-width="0.9"/>
+    <line x1="32" y1="26" x2="24" y2="36" stroke-width="0.9"/>
+    <line x1="43" y1="20" x2="50" y2="28" stroke-width="0.7" stroke-opacity="0.45"/>
+    <line x1="38" y1="36" x2="44" y2="42" stroke-width="0.7" stroke-opacity="0.45"/>
+    <line x1="24" y1="36" x2="19" y2="42" stroke-width="0.7" stroke-opacity="0.45"/>
+  </g>
+
+  <!-- Nodes clipped -->
+  <g clip-path="url(#clip)">
+    <circle cx="32" cy="26" r="3.2" fill="white" opacity="0.95"/>
+    <circle cx="19" cy="20" r="2.2" fill="#62a0ea" opacity="0.88"/>
+    <circle cx="43" cy="20" r="2.2" fill="#62a0ea" opacity="0.88"/>
+    <circle cx="38" cy="36" r="2.2" fill="#62a0ea" opacity="0.88"/>
+    <circle cx="24" cy="36" r="2.0" fill="#62a0ea" opacity="0.80"/>
+    <circle cx="50" cy="28" r="1.8" fill="#62a0ea" opacity="0.75"/>
+    <circle cx="44" cy="42" r="1.6" fill="#62a0ea" opacity="0.70"/>
+    <circle cx="19" cy="42" r="1.6" fill="#62a0ea" opacity="0.70"/>
+  </g>
+
+  <!-- Specular -->
+  <circle cx="32" cy="32" r="29" fill="url(#spec)"/>
+
+  <!-- Border -->
+  <circle cx="32" cy="32" r="29" stroke="#3584E4" stroke-width="0.8" stroke-opacity="0.30"/>
+
+  <!-- Arc open at bottom-right: start ~-42°, end ~138° -->
+  <path d="M 53.5 12.7 A 29,29 0 1 0 10.5 51.3"
+        stroke="url(#arc)" stroke-width="3.2" stroke-linecap="round" fill="none"/>
+</svg>
